@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习-类继承和子类重写父类方法</title>
+  </head>
+  <body>
+    <script>
+      class Phone {
+        constructor(brand, price) {
+          this.brand = brand;
+          this.price = price;
+        }
+        call() {
+          console.log("calling...");
+        }
+      }
+
+      class SmarkPhone extends Phone {
+        constructor(brand, price, screenSize) {
+          super(brand, price);
+          this.screenSize = screenSize;
+        }
+        show() {
+          console.log("showing...");
+        }
+        playGame(){
+          console.log("playing game...")
+        }
+        //重写父类的call方法
+        call() {
+          console.log("smartPhone calling...");
+        }
+      }
+
+      const xiaomi = new SmarkPhone("Xiaomi", 1000, 6.5);
+      console.log(xiaomi);
+      xiaomi.call();//smartPhone calling...
+      xiaomi.show();
+      xiaomi.playGame();
+
+    </script>
+  </body>
+</html>

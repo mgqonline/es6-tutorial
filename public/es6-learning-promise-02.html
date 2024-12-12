@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习-promise</title>
+    <style type="text/css">
+      div{
+        width: 200px;
+        height: 100px;
+        background-color: #58a;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      const fs = require("fs");
+
+      fs.readFile("./为学.md", "utf8", (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(data);
+        }
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习</title>
+    <style type="text/css">
+      /* // 应用混合器到 div */
+      .centered-box {
+        border: 2px solid gray;
+        box-shadow: 20px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 200px;
+        background-color: skyblue;
+        margin: 50px auto;
+      }
+      div{
+        width: 200px;
+        height: 100px;
+        background-color: #58a;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ad"></div>
+    <script>
+      // let actor = `weixiang`
+      // let appendStr = `${actor}是一个好演员`
+      // let name = `张三`
+      // let age = 25
+      // console.log(appendStr)
+      // let obj = {
+      //   name,
+      //   age,
+      //   findStr(){
+      //     console.log(`我是${this.name}，今年${this.age}岁`)
+      //   }
+      // }
+      // obj.findStr()
+      // console.log(obj)
+      // function getName(){
+      //   console.log(this.name)
+      // }
+      // let getName2=()=>{
+      //   console.log(this.name)
+      // }
+      // window.name = '尚硅谷';
+      // const school={
+      //   name:"AJKJSF"
+      // }
+      // getName()
+      // getName2()
+
+      // getName.call(school)
+      // getName2.call(school)
+
+      // let Person = (name,page) =>{
+      //   this.name = name;
+      //   this.age = age;
+      // }
+      // let me = new Person('shangguigu',25)
+      // console.log(me)
+      // let ad = document.getElementById('ad')
+      // ad.addEventListener('click',
+      // function(){
+      //   let _this = this;
+      //   setTimeout(
+      //   //   function(){
+      //   //   _this.style.backgroundColor = 'pink'
+      //   // }
+      //   ()=>{
+      //     this.style.backgroundColor = 'pink'
+      //   }
+      //   ,1000);
+      // });
+      // const arr = [1,5,6,9,11,10,16,25,100];
+      // // const result = arr.filter(function(item){
+      // //   if(item % 2 === 0){
+      // //     return true
+      // //   }
+      // // })
+      // const result = arr.filter(item=>item % 2 === 0)
+     
+      // console.log(result)
+      // function connect(options){
+      // function connect({url,username,password,port}){
+      //   // let host = url
+      //   // let username = username
+      //   // let password = password
+      //   // let port = port
+      //   console.log(`连接:${url}:${port}，用户名：${username}，密码：${password}`)
+      // }
+      // connect ({
+      //   url: 'http://localhost',
+      //   username: 'admin',
+      //   password: '123456',
+      //   port: 3000
+      // })
+
+      // var date  = function(){
+      //   console.log(arguments)
+      // }
+      // date(1,2,3,4,5)
+      // var date2 = function(a,b,...args){
+      //   console.log(a,b,args)
+      // }
+      // date2(1,2,3,4,5)
+
+      
+    </script>
+    <div class="centered-box">
+      <p>居中的内容</p>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习-promise发送ajax请求</title>
+    <style type="text/css">
+      div{
+        width: 200px;
+        height: 100px;
+        background-color: #58a;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      // const xhr = new XMLHttpRequest();
+      // xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
+
+      // xhr.send();
+
+      // xhr.onreadystatechange = function() {
+      //   if (xhr.readyState === 4) {
+      //     if (xhr.status === 200) {
+      //       const data = JSON.parse(xhr.responseText);
+      //       console.log(data);
+      //       document.querySelector("div").innerHTML = data.title;
+      //     } else {
+      //       console.error(xhr.statusText);
+      //     }
+      //   }
+      // };
+      const p = new Promise((resolve, reject) => {
+        //创建对象
+        const xhr = new XMLHttpRequest();
+        //初始化
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
+        //发送请求
+        xhr.send();
+
+        //绑定事件，处理响应结果
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              let data = JSON.parse(xhr.responseText);
+              resolve(data);
+              console.log(data);
+            } else {
+              reject(xhr.statusText);
+            }
+          }
+        };
+        });
+        p.then(data => {
+          console.log(data);
+        }).catch(error => {
+          console.error(error);
+        });
+      
+
+    </script>
+  </body>
+</html>

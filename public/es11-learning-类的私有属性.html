@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es9-类的私有属性</title>
+</head>
+<body>
+    <script>
+       class Person {
+        // 私有属性
+           #name;
+           #age;
+           //公有属性
+           address;
+           constructor(name, age,address) {
+              this.#name = name;
+              this.#age = age;
+              this.address = address;
+           }
+        //    get name() {
+        //       return this.#name;
+        //    }
+        //    set name(value) {
+        //       this.#name = value;
+        //    }
+        //    get age() {
+        //       return this.#age;
+        //    }
+        //    set age(value) {
+        //       this.#age = value;
+        //    }
+        }
+        const person = new Person('Alice', 25,'Beijing');
+        console.log(person.name); // undefined
+        console.log(person.age); // undefined
+        console.log(person.address); // 'Beijing'
+        person.name = 'Bob';
+        person.age = 30;
+        console.log(person.name); // 'Bob'
+    </script>
+</body>
+</html>

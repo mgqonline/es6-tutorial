@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es8-async-await搭配使用做异步处理</title>
+</head>
+<body>
+     <script>
+      // async function fetchData() {
+      //   //返回的是一个成功的promise
+      //   // return "hello async";
+
+      //   //返回的是一个失败的promise
+      //   // throw new Error("error");
+
+      //   //返回的是一个promise对象
+      //   return new Promise((resolve, reject) => {
+      //       resolve("hello async");
+      //       // reject("error");
+      //   });
+      // }
+      // const result = fetchData();
+      // // console.log(result);
+      // result.then(data => {
+      //   console.log(data);
+      // },reason =>{
+      //   console.warm(reason);
+      // }).catch(error => {
+      //   console.error(error);
+      // });
+
+      const p =new Promise((resolve, reject) => {
+          resolve("用户数据");
+      });
+      //async await 语法
+      async function main(){
+        try{
+          let result = await p;
+          console.log(result);
+        }catch(error){
+          console.error(error);
+        }
+      }
+      main();
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习-promise</title>
+    <style type="text/css">
+      div{
+        width: 200px;
+        height: 100px;
+        background-color: #58a;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      const p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // let data = "数据库的用户数据"
+          // resolve(data);
+
+          let err = "数据库读取失败"
+          reject(err);
+        }, 2000);
+      });
+      //调用promise的then方法，传入两个参数，第一个参数是成功的回调函数，第二个参数是失败的回调函数
+      p.then((data) => {
+        console.log(data);
+        document.querySelector("div").style.backgroundColor = "green";
+      },(reason)=>{
+        console.error(reason);
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动布局04-消除浮动带来的影响</title>
+    <style>
+       .outer {
+        width: 500px;
+        background-color: gray;
+        border: 1px solid black;
+       }
+       .box {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        border: 1px solid black;
+        margin: 10px;
+        /* float: left; */
+       }
+       .box1 .box2 .box3 {
+         float: left;
+       }
+       .box4{
+        /* display: inline-block; */
+       }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+    <!-- <div style="background-color: orange;">项目资金需求总额为500万元，其中用于平台建设和维护的费用为200万元，用于师资培训和教学资源开发的费用为150万元，用于市场推广和运营的费用为100万元，剩余50万元作为项目储备金。资金来源包括政府资助、企业投资和社会捐赠等项目资金需求总额为500万元，其中用于平台建设和维护的费用为200万元，用于师资培训和教学资源开发的费用为150万元，用于市场推广和运营的费用为100万元，剩余50万元作为项目储备金。资金来源包括政府资助、企业投资和社会捐赠等</div> -->
+</body>
+</html>

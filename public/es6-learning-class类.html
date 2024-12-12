@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习-symbol</title>
+    <style type="text/css">
+      div{
+        width: 200px;
+        height: 100px;
+        background-color: #58a;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      // function greet(greeting,prunctuation){
+      //   console.log(greeting + ", " + this.name + prunctuation)
+      // }
+      // const person = {
+      //   name: "mgq"
+      // }
+      // greet.call(person,"hello ","!")
+      
+      // //apply跟call的区别是，apply可以接收一个数组作为参数，而call只能接收一个参数列表。
+      // function sum(a,b){
+      //   return a+b;
+      // }
+      // const numbers = [1,2]
+      // const result = sum.apply(null,numbers)
+      // console.log(result)
+
+      // function Phone(brand,price){
+      //   this.brand = brand;
+      //   this.price = price;
+      // }
+      // Phone.prototype.call = function(){
+      //   console.log("calling...")
+      // }
+      // const phone2 = new Phone("iphone",1000)
+      // phone2.call()
+      // console.log(phone2)
+
+      class Mobile{
+        constructor(brand,price){
+          this.brand = brand;
+          this.price = price;
+        }
+        call(){
+          console.log("正在打电话中...")
+        }
+      }
+      var phone1 = new Mobile("iphone",1000)
+      phone1.call()
+      console.log(phone1)
+    </script>
+  </body>
+</html>

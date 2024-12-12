@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习-对象方法扩展</title>
+  </head>
+  <body>
+    <script>
+      //1、Object.is()
+      // const obj1 = { a: 1 };
+      // const obj2 = { a: 1 };
+      // console.log(Object.is(120,120))//true
+      // console.log(Object.is(obj1, obj2)); // false
+      // console.log(Object.is(obj1, obj1)); // true
+      // console.log(Object.is(null, null)); // true
+      // console.log(Object.is(undefined, undefined)); // true
+      // console.log(Object.is(0, -0)); // false
+      // console.log(Object.is(NaN, NaN)); // true
+      // console.log(Object.is(Infinity, -Infinity)); // false
+      // console.log(Object.is(true, 1)); // false
+
+      //2、Object.assign()
+      // const obj3 = { a: 1, b: 2 };
+      // const obj4 = { b: 3, c: 4,};
+      // Object.assign(obj3, obj4);
+      // console.log(obj3); // {a: 1, b: 3, c: 4}
+      // Object.assign(obj4, obj3)
+      // console.log(obj4); // {a: 1, b: 3, c: 4}
+      
+
+      //3、Object。setPrototypeOf() Object.getPrototypeOf()
+      const obj5 = { a: 1 };
+      const obj6 = { b: 2 };
+      Object.setPrototypeOf(obj5, obj6);
+      // const subObj = {c:55,d:6}
+      // Object.setPrototypeOf(obj5, subObj);
+      console.log(Object.getPrototypeOf(obj5)); // {b: 2}
+
+      //4、Object.getOwnPropertyDescriptor() Object.defineProperty()
+      const obj7 = { a: 1 };
+      console.log(Object.getOwnPropertyDescriptor(obj7, 'a')); // {value: 1, writable: true, enumerable: true, configurable: true}
+      Object.defineProperty(obj7, 'b', {
+        value: 2,
+        writable: false,
+        enumerable: false,
+        configurable: true,
+      });
+      console.log(Object.getOwnPropertyDescriptor(obj7, 'b')); // {value: 2, writable: false, enumerable: false, configurable: true}
+
+      //5、Object.keys() Object.values() Object.entries()
+      const obj8 = { a: 1, b: 2, c: 3 };
+      console.log(Object.keys(obj8)); // ["a", "b", "c"]
+      console.log(Object.values(obj8)); // [1, 2, 3]
+      console.log(Object.entries(obj8)); // [["a", 1], ["b", 2], ["c", 3]]
+
+    </script>
+  </body>
+</html>

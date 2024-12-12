@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es6-模块化export-import使用方法</title>
+</head>
+<body>
+      <script type="module">
+        // import * as m1 from './fun1.js';
+        // m1.sayHello()
+        // console.log(m1.school); // 输出fun1()的返回值
+
+        // import * as m2 from './fun2.js';
+        // m2.findJob()
+        // console.log(m2.job)
+
+        // import * as m3 from './fun3.js';
+        // console.log(m3) 
+        // console.log(m3.default.name) // 输出fun3()的返回值
+        // m3.default.change()
+
+        //2、导出多个变量
+        import {school,sayHello} from './fun1.js';
+        console.log(school); // 输出fun1()的返回值
+        sayHello();
+        import {job as lugu, findJob} from './fun2.js';
+        console.log(lugu); // 输出fun2()的返回值
+        findJob();
+        import {default as m3} from './fun3.js';
+        console.log(m3); // 输出fun3()的返回值
+      </script>
+</body>
+</html>

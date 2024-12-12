@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es9-promise-allSettled</title>
+</head>
+<body>
+    <script>
+      const pl = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('商品数据 -1 ');
+        }, 1000);
+      });
+      const pr = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject('商品数据 -2 ');
+        },1000);
+       });
+
+       const result = Promise.allSettled([pl, pr]);
+       console.log(result);
+
+       const res = Promise.all([pl, pr])
+       console.log(res);
+    </script>
+</body>
+</html>

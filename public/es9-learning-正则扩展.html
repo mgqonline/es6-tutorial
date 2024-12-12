@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es9-正则扩展-命名捕获分组</title>
+</head>
+<body>
+    <script>
+    //    let str = '<a href="http://www.baidu.com">获取</a>';
+
+    //    const reg = /<a href="(.*)">(.*)<\/a>/
+    //    const result = reg.exec(str);
+    //    console.log(result); // ["<a href=\"http://www.baidu.com\">获取</a>", "http://www.baidu.com", "获取"]
+
+    let str = '<a href="http://www.baidu.com">获取</a>'
+    const reg =/<a href="(?<url>.*)">(?<text>.*)<\/a>/
+    const result = reg.exec(str);
+    console.log(result); // ["<a href=\"http://www.baidu.com\">获取</a>", "http://www.baidu.com", "获取"]
+    console.log(result.groups.url); // "http://www.baidu.com"
+    console.log(result.groups.text); // "获取"
+
+    let str2 = '       1234567890     '
+    console.log(str2.trimStart(), str2.trimStart().length); // "1234567890     "
+    console.log(str2.trimEnd(),str2.trimEnd().length); // "       1234567890"
+    console.log(str2.trim().length); // "1234567890"
+    </script>
+</body>
+</html>

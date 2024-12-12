@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习-static静态成员</title>
+    <style type="text/css">
+      div{
+        width: 200px;
+        height: 100px;
+        background-color: #58a;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      // function Phone(){
+
+      // }
+      // Phone.name = "iphone";
+      // Phone.charge = function(){
+      //   console.log("充电中...");
+      // }
+      // // 静态成员只能通过类名调用，不能通过实例对象调用
+      // Phone.charge()
+      // let p1 = new Phone();
+      // //charge函数不属于实例对象的方法，所以不能通过实例对象调用
+      // p1.charge()
+
+      class Phone{
+        static name = "iphone";
+        static charge(){
+          console.log("充电中...");
+        }
+      }
+      let nokia = new Phone();
+      console.log(Phone.name); // iphone
+      console.log(nokia.name); // undefined
+    </script>
+  </body>
+</html>

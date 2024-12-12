@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习-es5构造函数</title>
+  </head>
+  <body>
+    <script>
+      function Phone(brand, price){
+        this.brand = brand;
+        this.price = price;
+      }
+      Phone.prototype.call = function(){
+        console.log("打电话");
+      }
+      function SmarkPhone(brand, price,color,size){
+        Phone.call(this, brand, price);
+        this.color = color;
+        this.size = size;
+      }
+      SmarkPhone.prototype = new Phone;
+      SmarkPhone.prototype.constructor = SmarkPhone;
+
+      SmarkPhone.prototype.photo = function(){
+        console.log("照相");
+      }
+
+      SmarkPhone.prototype.playGame = function(){
+        console.log("玩游戏");
+      }
+
+      var chuizi = new SmarkPhone("苹果", 8999, "黑色", "5.5寸");
+      console.log(chuizi); 
+
+    </script>
+  </body>
+</html>

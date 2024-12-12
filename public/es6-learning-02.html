@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6学习-扩展运算符</title>
+    <style type="text/css">
+      div{
+        width: 200px;
+        height: 100px;
+        background-color: #58a;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      const tfBoys = ['易洋千玺','王源','王俊凯']
+      function chunwan(){
+        console.log(arguments)
+      }
+      // chunwan(tfBoys)
+      // chunwan(...tfBoys)
+      const obj1 = {a:1,b:2,c:3}
+      const obj2 = {d:4,e:5,f:6}
+      const combObj = {...obj1,...obj2}
+      // console.log(combObj)
+      console.log(combObj)
+
+    </script>
+  </body>
+</html>
